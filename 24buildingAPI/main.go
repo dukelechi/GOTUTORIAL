@@ -48,15 +48,15 @@ func main() {
 	courses = append(courses, Course{CourseId: "4", CourseName: "MERN", CoursePrice: 199, Author: &Author{Fullname: "Hitesh Choudhary", Website: "go.dev"}})     // second seed
 
 	// routing
-	r.HanleFunc("/", serveHome).Methods("GET")
-	r.HanleFunc("/courses", getAllCourses).Methods("GET")
-	r.HanleFunc("/course/{id}", getOneCourse).Methods("GET")
-	r.HanleFunc("/course", createOneCourse).Methods("POST")
-	r.HanleFunc("/course/{id}", updateOneCourse).Methods("PUT")
-	r.HanleFunc("/course/{id}", deleteOneCourse).Methods("DELETE")
+	r.HandleFunc("/", serveHome).Methods("GET")
+	r.HandleFunc("/courses", getAllCourses).Methods("GET")
+	r.HandleFunc("/course/{id}", getOneCourse).Methods("GET")
+	r.HandleFunc("/course", createOneCourse).Methods("POST")
+	r.HandleFunc("/course/{id}", updateOneCourse).Methods("PUT")
+	r.HandleFunc("/course/{id}", deleteOneCourse).Methods("DELETE")
 
 	// listen to a port
-	log.Fatal(http.ListenAndServe(":4000", r))
+	log.Fatal(http.ListenAndServe(":5000", r))
 }
 
 // CONTROLLERS - file
